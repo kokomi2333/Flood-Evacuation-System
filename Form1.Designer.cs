@@ -53,7 +53,7 @@ namespace EngineWindowsApplication1
             // axTOCControl1
             // 
             this.axTOCControl1.Location = new System.Drawing.Point(70, 152);
-            this.axTOCControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.axTOCControl1.Margin = new System.Windows.Forms.Padding(4);
             this.axTOCControl1.Name = "axTOCControl1";
             this.axTOCControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axTOCControl1.OcxState")));
             this.axTOCControl1.Size = new System.Drawing.Size(337, 583);
@@ -63,7 +63,7 @@ namespace EngineWindowsApplication1
             // 
             this.axLicenseControl1.Enabled = true;
             this.axLicenseControl1.Location = new System.Drawing.Point(1060, 703);
-            this.axLicenseControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.axLicenseControl1.Margin = new System.Windows.Forms.Padding(4);
             this.axLicenseControl1.Name = "axLicenseControl1";
             this.axLicenseControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axLicenseControl1.OcxState")));
             this.axLicenseControl1.Size = new System.Drawing.Size(32, 32);
@@ -74,7 +74,7 @@ namespace EngineWindowsApplication1
             // 
             this.button1.BackgroundImage = global::EngineWindowsApplication1.Properties.Resources._01b6a25baafaf7a801213dea5c9797_jpg_2o;
             this.button1.Location = new System.Drawing.Point(1014, 87);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(160, 60);
             this.button1.TabIndex = 3;
@@ -85,7 +85,7 @@ namespace EngineWindowsApplication1
             // axToolbarControl1
             // 
             this.axToolbarControl1.Location = new System.Drawing.Point(293, 32);
-            this.axToolbarControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.axToolbarControl1.Margin = new System.Windows.Forms.Padding(4);
             this.axToolbarControl1.Name = "axToolbarControl1";
             this.axToolbarControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axToolbarControl1.OcxState")));
             this.axToolbarControl1.Size = new System.Drawing.Size(397, 28);
@@ -157,13 +157,13 @@ namespace EngineWindowsApplication1
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::EngineWindowsApplication1.Properties.Resources._01b6a25baafaf7a801213dea5c9797_jpg_2o;
-            this.ClientSize = new System.Drawing.Size(1832, 1120);
+            this.ClientSize = new System.Drawing.Size(1642, 745);
             this.Controls.Add(this.axMapControl1);
             this.Controls.Add(this.axToolbarControl1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.axLicenseControl1);
             this.Controls.Add(this.axTOCControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

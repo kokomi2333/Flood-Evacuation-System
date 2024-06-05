@@ -16,5 +16,21 @@ namespace EngineWindowsApplication1
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Scene窗体 nextForm = new Scene窗体();
+
+            // 显示新窗体为模态对话框
+            nextForm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 nextForm = new Form1();
+
+            // 显示新窗体为模态对话框
+            nextForm.ShowDialog();
+        }
     }
 }
