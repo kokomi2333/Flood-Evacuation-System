@@ -22,7 +22,30 @@ namespace EngineWindowsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            OpenFileDialog pOpenFileDialog = new OpenFileDialog();
+            pOpenFileDialog.CheckFileExists = true;
+            pOpenFileDialog.Title = "打开ArcMap文档";
+            pOpenFileDialog.Filter = "ArcMap文档(*.mxd)|*.mxd";
+            pOpenFileDialog.Multiselect = false;
+            pOpenFileDialog.RestoreDirectory = true;
 
+            if (pOpenFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string pFileName = pOpenFileDialog.FileName;
+                if (pFileName == "")
+                    return;
+
+                if (axMapControl1.CheckMxFile(pFileName)) // 检查地图文档是否有效
+                {
+                    axMapControl1.Map.ClearLayers();
+                    axMapControl1.LoadMxFile(pFileName); // 加载地图文档
+                }
+                else
+                {
+                    MessageBox.Show(pFileName + "请加载正确有效的ArcScene文档！", "信息提示");
+                    return;
+                }
+            }
         }
 
         private void axToolbarControl1_OnMouseDown(object sender, ESRI.ArcGIS.Controls.IToolbarControlEvents_OnMouseDownEvent e)
@@ -47,30 +70,7 @@ namespace EngineWindowsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenFileDialog pOpenFileDialog = new OpenFileDialog();
-            pOpenFileDialog.CheckFileExists = true;
-            pOpenFileDialog.Title = "打开ArcScene文档";
-            pOpenFileDialog.Filter = "ArcScene文档(*.sxd)|*.sxd";
-            pOpenFileDialog.Multiselect = false;
-            pOpenFileDialog.RestoreDirectory = true;
-
-            if (pOpenFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string pFileName = pOpenFileDialog.FileName;
-                if (pFileName == "")
-                    return;
-
-                if (axSceneControl1.CheckSxFile(pFileName)) // 检查地图文档是否有效
-                {
-                    axSceneControl1.Scene.ClearLayers();
-                    axSceneControl1.LoadSxFile(pFileName); // 加载地图文档
-                }
-                else
-                {
-                    MessageBox.Show(pFileName + "请加载正确有效的ArcScene文档！", "信息提示");
-                    return;
-                }
-            }
+           
         }
     }
 }

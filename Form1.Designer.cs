@@ -42,13 +42,12 @@ namespace EngineWindowsApplication1
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
-            this.axSceneControl1 = new ESRI.ArcGIS.Controls.AxSceneControl();
-            this.button2 = new System.Windows.Forms.Button();
+            this.axMapControl1 = new ESRI.ArcGIS.Controls.AxMapControl();
             ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axSceneControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // axTOCControl1
@@ -57,7 +56,7 @@ namespace EngineWindowsApplication1
             this.axTOCControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.axTOCControl1.Name = "axTOCControl1";
             this.axTOCControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axTOCControl1.OcxState")));
-            this.axTOCControl1.Size = new System.Drawing.Size(373, 789);
+            this.axTOCControl1.Size = new System.Drawing.Size(337, 583);
             this.axTOCControl1.TabIndex = 0;
             // 
             // axLicenseControl1
@@ -74,12 +73,12 @@ namespace EngineWindowsApplication1
             // button1
             // 
             this.button1.BackgroundImage = global::EngineWindowsApplication1.Properties.Resources._01b6a25baafaf7a801213dea5c9797_jpg_2o;
-            this.button1.Location = new System.Drawing.Point(580, 1029);
+            this.button1.Location = new System.Drawing.Point(1014, 87);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(160, 60);
             this.button1.TabIndex = 3;
-            this.button1.Text = "xitong";
+            this.button1.Text = "加载地图";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -145,24 +144,13 @@ namespace EngineWindowsApplication1
             this.toolStripMenuItem6.Size = new System.Drawing.Size(91, 30);
             this.toolStripMenuItem6.Text = "4";
             // 
-            // axSceneControl1
+            // axMapControl1
             // 
-            this.axSceneControl1.Location = new System.Drawing.Point(530, 152);
-            this.axSceneControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.axSceneControl1.Name = "axSceneControl1";
-            this.axSceneControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axSceneControl1.OcxState")));
-            this.axSceneControl1.Size = new System.Drawing.Size(791, 789);
-            this.axSceneControl1.TabIndex = 5;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1478, 130);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 34);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "加载地图";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.axMapControl1.Location = new System.Drawing.Point(520, 152);
+            this.axMapControl1.Name = "axMapControl1";
+            this.axMapControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMapControl1.OcxState")));
+            this.axMapControl1.Size = new System.Drawing.Size(487, 496);
+            this.axMapControl1.TabIndex = 7;
             // 
             // Form1
             // 
@@ -170,8 +158,7 @@ namespace EngineWindowsApplication1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::EngineWindowsApplication1.Properties.Resources._01b6a25baafaf7a801213dea5c9797_jpg_2o;
             this.ClientSize = new System.Drawing.Size(1832, 1120);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.axSceneControl1);
+            this.Controls.Add(this.axMapControl1);
             this.Controls.Add(this.axToolbarControl1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.axLicenseControl1);
@@ -184,7 +171,7 @@ namespace EngineWindowsApplication1
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.axSceneControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -202,8 +189,7 @@ namespace EngineWindowsApplication1
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
-        private ESRI.ArcGIS.Controls.AxSceneControl axSceneControl1;
-        private System.Windows.Forms.Button button2;
+        private ESRI.ArcGIS.Controls.AxMapControl axMapControl1;
     }
 }
 

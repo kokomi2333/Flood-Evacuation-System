@@ -289,6 +289,12 @@
     <Compile Include="LicenseInitializer.Designer.cs">
       <DependentUpon>LicenseInitializer.cs</DependentUpon>
     </Compile>
+    <Compile Include="第一窗口.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="第一窗口.Designer.cs">
+      <DependentUpon>第一窗口.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
