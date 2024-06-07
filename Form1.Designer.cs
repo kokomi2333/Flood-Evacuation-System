@@ -36,13 +36,14 @@ namespace EngineWindowsApplication1
             this.button1 = new System.Windows.Forms.Button();
             this.axToolbarControl1 = new ESRI.ArcGIS.Controls.AxToolbarControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.sjbszToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAttribute = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLayerSel = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLayerUnSel = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnZoomToLayer = new System.Windows.Forms.ToolStripMenuItem();
             this.axMapControl1 = new ESRI.ArcGIS.Controls.AxMapControl();
+            this.btnRemoveLayer = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
@@ -96,53 +97,54 @@ namespace EngineWindowsApplication1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sjbszToolStripMenuItem,
-            this.toolStripMenuItem4,
-            this.toolStripMenuItem5,
-            this.toolStripMenuItem6});
+            this.btnAttribute,
+            this.btnLayerSel,
+            this.btnLayerUnSel,
+            this.btnZoomToLayer,
+            this.btnRemoveLayer});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(92, 124);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(241, 187);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
-            // sjbszToolStripMenuItem
+            // btnAttribute
             // 
-            this.sjbszToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAttribute.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2,
             this.toolStripMenuItem3});
-            this.sjbszToolStripMenuItem.Name = "sjbszToolStripMenuItem";
-            this.sjbszToolStripMenuItem.Size = new System.Drawing.Size(91, 30);
-            this.sjbszToolStripMenuItem.Text = "1";
-            this.sjbszToolStripMenuItem.Click += new System.EventHandler(this.sjbszToolStripMenuItem_Click);
+            this.btnAttribute.Name = "btnAttribute";
+            this.btnAttribute.Size = new System.Drawing.Size(240, 30);
+            this.btnAttribute.Text = "属性表";
+            this.btnAttribute.Click += new System.EventHandler(this.sjbszToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(121, 34);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(270, 34);
             this.toolStripMenuItem2.Text = "1";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(121, 34);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(270, 34);
             this.toolStripMenuItem3.Text = "2";
             // 
-            // toolStripMenuItem4
+            // btnLayerSel
             // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(91, 30);
-            this.toolStripMenuItem4.Text = "2";
+            this.btnLayerSel.Name = "btnLayerSel";
+            this.btnLayerSel.Size = new System.Drawing.Size(240, 30);
+            this.btnLayerSel.Text = "可选图层";
             // 
-            // toolStripMenuItem5
+            // btnLayerUnSel
             // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(91, 30);
-            this.toolStripMenuItem5.Text = "3";
+            this.btnLayerUnSel.Name = "btnLayerUnSel";
+            this.btnLayerUnSel.Size = new System.Drawing.Size(240, 30);
+            this.btnLayerUnSel.Text = "不可选图层";
             // 
-            // toolStripMenuItem6
+            // btnZoomToLayer
             // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(91, 30);
-            this.toolStripMenuItem6.Text = "4";
+            this.btnZoomToLayer.Name = "btnZoomToLayer";
+            this.btnZoomToLayer.Size = new System.Drawing.Size(240, 30);
+            this.btnZoomToLayer.Text = "移除图层";
             // 
             // axMapControl1
             // 
@@ -151,6 +153,12 @@ namespace EngineWindowsApplication1
             this.axMapControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMapControl1.OcxState")));
             this.axMapControl1.Size = new System.Drawing.Size(487, 496);
             this.axMapControl1.TabIndex = 7;
+            // 
+            // btnRemoveLayer
+            // 
+            this.btnRemoveLayer.Name = "btnRemoveLayer";
+            this.btnRemoveLayer.Size = new System.Drawing.Size(240, 30);
+            this.btnRemoveLayer.Text = "缩放到图层";
             // 
             // Form1
             // 
@@ -183,13 +191,14 @@ namespace EngineWindowsApplication1
         private System.Windows.Forms.Button button1;
         private ESRI.ArcGIS.Controls.AxToolbarControl axToolbarControl1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem sjbszToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnAttribute;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem btnLayerSel;
+        private System.Windows.Forms.ToolStripMenuItem btnLayerUnSel;
+        private System.Windows.Forms.ToolStripMenuItem btnZoomToLayer;
         private ESRI.ArcGIS.Controls.AxMapControl axMapControl1;
+        private System.Windows.Forms.ToolStripMenuItem btnRemoveLayer;
     }
 }
 

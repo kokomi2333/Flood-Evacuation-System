@@ -33,25 +33,34 @@ namespace EngineWindowsApplication1
             this.axSceneControl1 = new ESRI.ArcGIS.Controls.AxSceneControl();
             this.axLicenseControl1 = new ESRI.ArcGIS.Controls.AxLicenseControl();
             this.axToolbarControl1 = new ESRI.ArcGIS.Controls.AxToolbarControl();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.axTOCControl1 = new ESRI.ArcGIS.Controls.AxTOCControl();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.加载数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.arcScene文档ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tIN数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DEM数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.坡度分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.axSceneControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // axSceneControl1
             // 
-            this.axSceneControl1.Location = new System.Drawing.Point(98, 154);
+            this.axSceneControl1.Location = new System.Drawing.Point(395, 148);
+            this.axSceneControl1.Margin = new System.Windows.Forms.Padding(2);
             this.axSceneControl1.Name = "axSceneControl1";
             this.axSceneControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axSceneControl1.OcxState")));
-            this.axSceneControl1.Size = new System.Drawing.Size(397, 397);
+            this.axSceneControl1.Size = new System.Drawing.Size(389, 326);
             this.axSceneControl1.TabIndex = 0;
             // 
             // axLicenseControl1
             // 
             this.axLicenseControl1.Enabled = true;
-            this.axLicenseControl1.Location = new System.Drawing.Point(892, 29);
+            this.axLicenseControl1.Location = new System.Drawing.Point(11, 56);
+            this.axLicenseControl1.Margin = new System.Windows.Forms.Padding(2);
             this.axLicenseControl1.Name = "axLicenseControl1";
             this.axLicenseControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axLicenseControl1.OcxState")));
             this.axLicenseControl1.Size = new System.Drawing.Size(32, 32);
@@ -60,46 +69,91 @@ namespace EngineWindowsApplication1
             // axToolbarControl1
             // 
             this.axToolbarControl1.Location = new System.Drawing.Point(98, 72);
+            this.axToolbarControl1.Margin = new System.Windows.Forms.Padding(2);
             this.axToolbarControl1.Name = "axToolbarControl1";
             this.axToolbarControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axToolbarControl1.OcxState")));
             this.axToolbarControl1.Size = new System.Drawing.Size(397, 28);
             this.axToolbarControl1.TabIndex = 2;
             // 
-            // button1
+            // axTOCControl1
             // 
-            this.button1.Location = new System.Drawing.Point(672, 85);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 35);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "加载三维地图";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.axTOCControl1.Location = new System.Drawing.Point(51, 148);
+            this.axTOCControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.axTOCControl1.Name = "axTOCControl1";
+            this.axTOCControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axTOCControl1.OcxState")));
+            this.axTOCControl1.Size = new System.Drawing.Size(315, 306);
+            this.axTOCControl1.TabIndex = 5;
             // 
-            // button2
+            // menuStrip1
             // 
-            this.button2.Location = new System.Drawing.Point(672, 178);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 32);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.加载数据ToolStripMenuItem,
+            this.坡度分析ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(846, 25);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 加载数据ToolStripMenuItem
+            // 
+            this.加载数据ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.arcScene文档ToolStripMenuItem,
+            this.tIN数据ToolStripMenuItem,
+            this.DEM数据ToolStripMenuItem});
+            this.加载数据ToolStripMenuItem.Name = "加载数据ToolStripMenuItem";
+            this.加载数据ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.加载数据ToolStripMenuItem.Text = "加载数据";
+            // 
+            // arcScene文档ToolStripMenuItem
+            // 
+            this.arcScene文档ToolStripMenuItem.Name = "arcScene文档ToolStripMenuItem";
+            this.arcScene文档ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arcScene文档ToolStripMenuItem.Text = "ArcScene文档";
+            this.arcScene文档ToolStripMenuItem.Click += new System.EventHandler(this.arcScene文档ToolStripMenuItem_Click);
+            // 
+            // tIN数据ToolStripMenuItem
+            // 
+            this.tIN数据ToolStripMenuItem.Name = "tIN数据ToolStripMenuItem";
+            this.tIN数据ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tIN数据ToolStripMenuItem.Text = "TIN数据";
+            this.tIN数据ToolStripMenuItem.Click += new System.EventHandler(this.tIN数据ToolStripMenuItem_Click);
+            // 
+            // DEM数据ToolStripMenuItem
+            // 
+            this.DEM数据ToolStripMenuItem.Name = "DEM数据ToolStripMenuItem";
+            this.DEM数据ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.DEM数据ToolStripMenuItem.Text = "DEM数据";
+            this.DEM数据ToolStripMenuItem.Click += new System.EventHandler(this.DEM数据ToolStripMenuItem_Click);
+            // 
+            // 坡度分析ToolStripMenuItem
+            // 
+            this.坡度分析ToolStripMenuItem.Name = "坡度分析ToolStripMenuItem";
+            this.坡度分析ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.坡度分析ToolStripMenuItem.Text = "坡度分析";
             // 
             // Scene窗体
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 666);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(846, 501);
+            this.Controls.Add(this.axTOCControl1);
             this.Controls.Add(this.axToolbarControl1);
             this.Controls.Add(this.axLicenseControl1);
             this.Controls.Add(this.axSceneControl1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Scene窗体";
             this.Text = "Scene窗体";
             ((System.ComponentModel.ISupportInitialize)(this.axSceneControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -108,7 +162,12 @@ namespace EngineWindowsApplication1
         private ESRI.ArcGIS.Controls.AxSceneControl axSceneControl1;
         private ESRI.ArcGIS.Controls.AxLicenseControl axLicenseControl1;
         private ESRI.ArcGIS.Controls.AxToolbarControl axToolbarControl1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private ESRI.ArcGIS.Controls.AxTOCControl axTOCControl1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 加载数据ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem arcScene文档ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tIN数据ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem DEM数据ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 坡度分析ToolStripMenuItem;
     }
 }
