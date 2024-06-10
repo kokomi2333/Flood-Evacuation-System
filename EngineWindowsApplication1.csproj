@@ -295,11 +295,23 @@
     <Compile Include="Scene窗体.Designer.cs">
       <DependentUpon>Scene窗体.cs</DependentUpon>
     </Compile>
+    <Compile Include="属性表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="属性表.Designer.cs">
+      <DependentUpon>属性表.cs</DependentUpon>
+    </Compile>
     <Compile Include="第一窗口.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="第一窗口.Designer.cs">
       <DependentUpon>第一窗口.cs</DependentUpon>
+    </Compile>
+    <Compile Include="简介.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="简介.Designer.cs">
+      <DependentUpon>简介.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -317,8 +329,14 @@
     <EmbeddedResource Include="Scene窗体.resx">
       <DependentUpon>Scene窗体.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="属性表.resx">
+      <DependentUpon>属性表.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="第一窗口.resx">
       <DependentUpon>第一窗口.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="简介.resx">
+      <DependentUpon>简介.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
