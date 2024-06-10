@@ -15,6 +15,7 @@ using System.IO;
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.DataSourcesFile;
 using ESRI.ArcGIS.DataSourcesRaster;
+using ESRI.ArcGIS.Display;
 
 namespace EngineWindowsApplication1
 {
@@ -64,7 +65,7 @@ namespace EngineWindowsApplication1
 
                 OpenFileDialog pOpenFileDialog = new OpenFileDialog();
                 pOpenFileDialog.Title = "加载DEM文档";
-                pOpenFileDialog.Filter = "DEM文档(*.tif)|*.tif";
+                pOpenFileDialog.Filter = "DEM文档(*.*)|*.tif;*.dem;*.gdb;*.jpg|TIF文档(*.tif)|*.tif|DEM文件(*.dem)|*.dem|栅格数据集(*.gdb)|*.gdb|JPEG文件(*.jpg)|*.jpg";
 
             if (pOpenFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -128,6 +129,67 @@ namespace EngineWindowsApplication1
                 }
 
 
+        }
+
+        private void 地形渲染ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Render render = new Render(this);
+            //
+            //render.Show();
+            try
+            {
+                IScene scene = axSceneControl1.Scene;
+                ILayer layer = scene.get_Layer(0);
+                IRasterLayer pRasterLayer = layer as IRasterLayer;
+                IRaster raster = (IRaster)pRasterLayer.Raster;
+                IRasterBandCollection rasterbands = raster as IRasterBandCollection;
+                IRasterBand rasterband = rasterbands.Item(0);
+                IRasterStretchColorRampRenderer pRStretchRender = new RasterStretchColorRampRendererClass();
+                //创建两个起始颜色
+                IRgbColor pFromRgbColor = new RgbColorClass();
+                pFromRgbColor.Red = 40;
+                pFromRgbColor.Green = 30;
+                pFromRgbColor.Blue = 250;
+                IRgbColor pToRgbColor = new RgbColorClass();
+                pToRgbColor.Red = 240;
+                pToRgbColor.Green = 80;
+                pToRgbColor.Blue = 40;
+                //创建起始色带
+                IAlgorithmicColorRamp pAlgorithmicColorRamp = new AlgorithmicColorRampClass();
+                pAlgorithmicColorRamp.Size = 255;
+                pAlgorithmicColorRamp.FromColor = pFromRgbColor as IColor;
+                pAlgorithmicColorRamp.ToColor = pToRgbColor as IColor;
+                bool btrue = true;
+                pAlgorithmicColorRamp.CreateRamp(out btrue);
+                //选择拉伸颜色带符号化的波段
+                pRStretchRender.BandIndex = 1;
+                //设置拉伸颜色带符号化所采用的颜色带
+                pRStretchRender.ColorRamp = pAlgorithmicColorRamp as IColorRamp;
+                IRasterRenderer pRasterRender = pRStretchRender as IRasterRenderer;
+                pRasterLayer = scene.get_Layer(0) as IRasterLayer;
+                pRasterRender.Raster = pRasterLayer as IRaster;
+                pRasterRender.Update();
+                //符号化RasterLayer
+                pRasterLayer.Renderer = pRasterRender;
+                //渲染的刷新
+                axSceneControl1.Scene.SceneGraph.Invalidate(pRasterLayer, true, false);
+                axSceneControl1.SceneViewer.Redraw(true);
+                axSceneControl1.Scene.SceneGraph.RefreshViewers();
+                axTOCControl1.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewForeground, pRasterLayer, axSceneControl1.Scene.Extent);
+                axTOCControl1.Update();
+            }
+            catch (Exception Err)
+            {
+                MessageBox.Show(Err.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void 坡度分析ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            坡度分析 nextForm = new 坡度分析();
+
+            // 显示新窗体为模态对话框
+            nextForm.ShowDialog();
         }
     }
 }

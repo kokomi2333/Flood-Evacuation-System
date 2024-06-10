@@ -41,6 +41,7 @@ namespace EngineWindowsApplication1
             this.DEM数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.坡度分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.地形渲染ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.淹没分析ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.axSceneControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
@@ -90,7 +91,8 @@ namespace EngineWindowsApplication1
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.加载数据ToolStripMenuItem,
             this.坡度分析ToolStripMenuItem,
-            this.地形渲染ToolStripMenuItem});
+            this.地形渲染ToolStripMenuItem,
+            this.淹没分析ToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(773, 25);
@@ -110,21 +112,21 @@ namespace EngineWindowsApplication1
             // arcScene文档ToolStripMenuItem
             // 
             this.arcScene文档ToolStripMenuItem.Name = "arcScene文档ToolStripMenuItem";
-            this.arcScene文档ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arcScene文档ToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.arcScene文档ToolStripMenuItem.Text = "ArcScene文档";
             this.arcScene文档ToolStripMenuItem.Click += new System.EventHandler(this.arcScene文档ToolStripMenuItem_Click);
             // 
             // tIN数据ToolStripMenuItem
             // 
             this.tIN数据ToolStripMenuItem.Name = "tIN数据ToolStripMenuItem";
-            this.tIN数据ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tIN数据ToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.tIN数据ToolStripMenuItem.Text = "TIN数据";
             this.tIN数据ToolStripMenuItem.Click += new System.EventHandler(this.tIN数据ToolStripMenuItem_Click);
             // 
             // DEM数据ToolStripMenuItem
             // 
             this.DEM数据ToolStripMenuItem.Name = "DEM数据ToolStripMenuItem";
-            this.DEM数据ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.DEM数据ToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.DEM数据ToolStripMenuItem.Text = "DEM数据";
             this.DEM数据ToolStripMenuItem.Click += new System.EventHandler(this.DEM数据ToolStripMenuItem_Click);
             // 
@@ -133,12 +135,20 @@ namespace EngineWindowsApplication1
             this.坡度分析ToolStripMenuItem.Name = "坡度分析ToolStripMenuItem";
             this.坡度分析ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.坡度分析ToolStripMenuItem.Text = "坡度分析";
+            this.坡度分析ToolStripMenuItem.Click += new System.EventHandler(this.坡度分析ToolStripMenuItem_Click);
             // 
             // 地形渲染ToolStripMenuItem
             // 
             this.地形渲染ToolStripMenuItem.Name = "地形渲染ToolStripMenuItem";
             this.地形渲染ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.地形渲染ToolStripMenuItem.Text = "地形渲染";
+            this.地形渲染ToolStripMenuItem.Click += new System.EventHandler(this.地形渲染ToolStripMenuItem_Click);
+            // 
+            // 淹没分析ToolStripMenuItem1
+            // 
+            this.淹没分析ToolStripMenuItem1.Name = "淹没分析ToolStripMenuItem1";
+            this.淹没分析ToolStripMenuItem1.Size = new System.Drawing.Size(68, 21);
+            this.淹没分析ToolStripMenuItem1.Text = "淹没分析";
             // 
             // Scene窗体
             // 
@@ -166,8 +176,6 @@ namespace EngineWindowsApplication1
         }
 
         #endregion
-
-        private ESRI.ArcGIS.Controls.AxSceneControl axSceneControl1;
         private ESRI.ArcGIS.Controls.AxLicenseControl axLicenseControl1;
         private ESRI.ArcGIS.Controls.AxToolbarControl axToolbarControl1;
         private ESRI.ArcGIS.Controls.AxTOCControl axTOCControl1;
@@ -178,5 +186,7 @@ namespace EngineWindowsApplication1
         private System.Windows.Forms.ToolStripMenuItem DEM数据ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 坡度分析ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 地形渲染ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 淹没分析ToolStripMenuItem1;
+        public ESRI.ArcGIS.Controls.AxSceneControl axSceneControl1;
     }
 }
