@@ -16,6 +16,7 @@ using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.DataSourcesFile;
 using ESRI.ArcGIS.DataSourcesRaster;
 using ESRI.ArcGIS.Display;
+using ESRI.ArcGIS.Geometry;
 
 namespace EngineWindowsApplication1
 {
@@ -190,6 +191,46 @@ namespace EngineWindowsApplication1
 
             // 显示新窗体为模态对话框
             nextForm.ShowDialog();
+        }
+
+        private void 坐标转换ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IPoint TransformCoordinate(IPoint point, ISpatialReference sourceSrs, ISpatialReference targetSrs)
+            {
+                // 创建空间参考转换工厂  
+                SpatialReferenceTransformFactoryClass spatialReferenceTransformFactoryClass = new SpatialReferenceTransformFactoryClass();
+                ISpatialReferenceTransformFactory transformFactory = (ISpatialReferenceTransformFactory)spatialReferenceTransformFactoryClass;
+
+                // 尝试创建空间参考转换对象  
+                ISpatialReferenceTransform transform = transformFactory.CreateTransform(sourceSrs, targetSrs);
+
+                if (transform == null)
+                {
+                    // 转换对象创建失败，可能是因为源和目标空间参考不兼容  
+                    // 这里可以抛出异常，记录错误，或者返回null等  
+                    throw new InvalidOperationException("Unable to create spatial reference transform between the source and target spatial references.");
+                }
+
+                // 假设 point 是已经存在的 IPoint 对象  
+                if (point != null)
+                {
+                    // 使用转换对象来转换点  
+                    IPoint transformedPoint = (IPoint)transform.TransformPoint(point);
+
+                    // 返回转换后的点  
+                    return transformedPoint;
+                }
+                else
+                {
+                    // 点对象为null，抛出异常或返回null等  
+                    throw new ArgumentNullException("The point to be transformed is null.");
+                }
+                // 转换点坐标  
+                IGeometry transformedGeometry = transform.Transform2D(point as IGeometry);
+
+                // 确保转换后的对象仍然是点  
+                return transformedGeometry as IPoint;
+            }
         }
     }
 }

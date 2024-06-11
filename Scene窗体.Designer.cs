@@ -42,6 +42,7 @@ namespace EngineWindowsApplication1
             this.坡度分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.地形渲染ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.淹没分析ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.坐标转换ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.axSceneControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
@@ -52,17 +53,15 @@ namespace EngineWindowsApplication1
             // axSceneControl1
             // 
             this.axSceneControl1.Location = new System.Drawing.Point(250, 59);
-            this.axSceneControl1.Margin = new System.Windows.Forms.Padding(2);
             this.axSceneControl1.Name = "axSceneControl1";
             this.axSceneControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axSceneControl1.OcxState")));
-            this.axSceneControl1.Size = new System.Drawing.Size(512, 431);
+            this.axSceneControl1.Size = new System.Drawing.Size(768, 647);
             this.axSceneControl1.TabIndex = 0;
             // 
             // axLicenseControl1
             // 
             this.axLicenseControl1.Enabled = true;
             this.axLicenseControl1.Location = new System.Drawing.Point(741, 0);
-            this.axLicenseControl1.Margin = new System.Windows.Forms.Padding(2);
             this.axLicenseControl1.Name = "axLicenseControl1";
             this.axLicenseControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axLicenseControl1.OcxState")));
             this.axLicenseControl1.Size = new System.Drawing.Size(32, 32);
@@ -71,31 +70,32 @@ namespace EngineWindowsApplication1
             // axToolbarControl1
             // 
             this.axToolbarControl1.Location = new System.Drawing.Point(0, 27);
-            this.axToolbarControl1.Margin = new System.Windows.Forms.Padding(2);
             this.axToolbarControl1.Name = "axToolbarControl1";
             this.axToolbarControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axToolbarControl1.OcxState")));
-            this.axToolbarControl1.Size = new System.Drawing.Size(762, 28);
+            this.axToolbarControl1.Size = new System.Drawing.Size(1143, 28);
             this.axToolbarControl1.TabIndex = 2;
             // 
             // axTOCControl1
             // 
             this.axTOCControl1.Location = new System.Drawing.Point(0, 59);
-            this.axTOCControl1.Margin = new System.Windows.Forms.Padding(2);
             this.axTOCControl1.Name = "axTOCControl1";
             this.axTOCControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axTOCControl1.OcxState")));
-            this.axTOCControl1.Size = new System.Drawing.Size(246, 431);
+            this.axTOCControl1.Size = new System.Drawing.Size(369, 647);
             this.axTOCControl1.TabIndex = 5;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.加载数据ToolStripMenuItem,
             this.坡度分析ToolStripMenuItem,
             this.地形渲染ToolStripMenuItem,
-            this.淹没分析ToolStripMenuItem1});
+            this.淹没分析ToolStripMenuItem1,
+            this.坐标转换ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(773, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1160, 34);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -106,62 +106,68 @@ namespace EngineWindowsApplication1
             this.tIN数据ToolStripMenuItem,
             this.DEM数据ToolStripMenuItem});
             this.加载数据ToolStripMenuItem.Name = "加载数据ToolStripMenuItem";
-            this.加载数据ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.加载数据ToolStripMenuItem.Size = new System.Drawing.Size(98, 28);
             this.加载数据ToolStripMenuItem.Text = "加载数据";
             // 
             // arcScene文档ToolStripMenuItem
             // 
             this.arcScene文档ToolStripMenuItem.Name = "arcScene文档ToolStripMenuItem";
-            this.arcScene文档ToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.arcScene文档ToolStripMenuItem.Size = new System.Drawing.Size(225, 34);
             this.arcScene文档ToolStripMenuItem.Text = "ArcScene文档";
             this.arcScene文档ToolStripMenuItem.Click += new System.EventHandler(this.arcScene文档ToolStripMenuItem_Click);
             // 
             // tIN数据ToolStripMenuItem
             // 
             this.tIN数据ToolStripMenuItem.Name = "tIN数据ToolStripMenuItem";
-            this.tIN数据ToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.tIN数据ToolStripMenuItem.Size = new System.Drawing.Size(225, 34);
             this.tIN数据ToolStripMenuItem.Text = "TIN数据";
             this.tIN数据ToolStripMenuItem.Click += new System.EventHandler(this.tIN数据ToolStripMenuItem_Click);
             // 
             // DEM数据ToolStripMenuItem
             // 
             this.DEM数据ToolStripMenuItem.Name = "DEM数据ToolStripMenuItem";
-            this.DEM数据ToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.DEM数据ToolStripMenuItem.Size = new System.Drawing.Size(225, 34);
             this.DEM数据ToolStripMenuItem.Text = "DEM数据";
             this.DEM数据ToolStripMenuItem.Click += new System.EventHandler(this.DEM数据ToolStripMenuItem_Click);
             // 
             // 坡度分析ToolStripMenuItem
             // 
             this.坡度分析ToolStripMenuItem.Name = "坡度分析ToolStripMenuItem";
-            this.坡度分析ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.坡度分析ToolStripMenuItem.Size = new System.Drawing.Size(98, 28);
             this.坡度分析ToolStripMenuItem.Text = "坡度分析";
             this.坡度分析ToolStripMenuItem.Click += new System.EventHandler(this.坡度分析ToolStripMenuItem_Click);
             // 
             // 地形渲染ToolStripMenuItem
             // 
             this.地形渲染ToolStripMenuItem.Name = "地形渲染ToolStripMenuItem";
-            this.地形渲染ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.地形渲染ToolStripMenuItem.Size = new System.Drawing.Size(98, 28);
             this.地形渲染ToolStripMenuItem.Text = "地形渲染";
             this.地形渲染ToolStripMenuItem.Click += new System.EventHandler(this.地形渲染ToolStripMenuItem_Click);
             // 
             // 淹没分析ToolStripMenuItem1
             // 
             this.淹没分析ToolStripMenuItem1.Name = "淹没分析ToolStripMenuItem1";
-            this.淹没分析ToolStripMenuItem1.Size = new System.Drawing.Size(68, 21);
+            this.淹没分析ToolStripMenuItem1.Size = new System.Drawing.Size(98, 28);
             this.淹没分析ToolStripMenuItem1.Text = "淹没分析";
+            // 
+            // 坐标转换ToolStripMenuItem
+            // 
+            this.坐标转换ToolStripMenuItem.Name = "坐标转换ToolStripMenuItem";
+            this.坐标转换ToolStripMenuItem.Size = new System.Drawing.Size(98, 28);
+            this.坐标转换ToolStripMenuItem.Text = "坐标转换";
+            this.坐标转换ToolStripMenuItem.Click += new System.EventHandler(this.坐标转换ToolStripMenuItem_Click);
             // 
             // Scene窗体
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 501);
+            this.ClientSize = new System.Drawing.Size(1160, 752);
             this.Controls.Add(this.axTOCControl1);
             this.Controls.Add(this.axToolbarControl1);
             this.Controls.Add(this.axLicenseControl1);
             this.Controls.Add(this.axSceneControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Scene窗体";
             this.Text = "Scene窗体";
             ((System.ComponentModel.ISupportInitialize)(this.axSceneControl1)).EndInit();
@@ -188,5 +194,6 @@ namespace EngineWindowsApplication1
         private System.Windows.Forms.ToolStripMenuItem 地形渲染ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 淹没分析ToolStripMenuItem1;
         public ESRI.ArcGIS.Controls.AxSceneControl axSceneControl1;
+        private System.Windows.Forms.ToolStripMenuItem 坐标转换ToolStripMenuItem;
     }
 }
