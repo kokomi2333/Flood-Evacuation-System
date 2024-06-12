@@ -43,6 +43,11 @@ namespace EngineWindowsApplication1
             this.地形渲染ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.淹没分析ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.坐标转换ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.线上预警平台ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.中国天气网ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.水利部信息中心ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.国家减灾网ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.全国水雨信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.axSceneControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
@@ -92,10 +97,11 @@ namespace EngineWindowsApplication1
             this.坡度分析ToolStripMenuItem,
             this.地形渲染ToolStripMenuItem,
             this.淹没分析ToolStripMenuItem1,
-            this.坐标转换ToolStripMenuItem});
+            this.坐标转换ToolStripMenuItem,
+            this.线上预警平台ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1160, 34);
+            this.menuStrip1.Size = new System.Drawing.Size(1182, 32);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -108,6 +114,7 @@ namespace EngineWindowsApplication1
             this.加载数据ToolStripMenuItem.Name = "加载数据ToolStripMenuItem";
             this.加载数据ToolStripMenuItem.Size = new System.Drawing.Size(98, 28);
             this.加载数据ToolStripMenuItem.Text = "加载数据";
+            this.加载数据ToolStripMenuItem.Click += new System.EventHandler(this.加载数据ToolStripMenuItem_Click);
             // 
             // arcScene文档ToolStripMenuItem
             // 
@@ -149,6 +156,7 @@ namespace EngineWindowsApplication1
             this.淹没分析ToolStripMenuItem1.Name = "淹没分析ToolStripMenuItem1";
             this.淹没分析ToolStripMenuItem1.Size = new System.Drawing.Size(98, 28);
             this.淹没分析ToolStripMenuItem1.Text = "淹没分析";
+            this.淹没分析ToolStripMenuItem1.Click += new System.EventHandler(this.淹没分析ToolStripMenuItem1_Click);
             // 
             // 坐标转换ToolStripMenuItem
             // 
@@ -157,11 +165,51 @@ namespace EngineWindowsApplication1
             this.坐标转换ToolStripMenuItem.Text = "坐标转换";
             this.坐标转换ToolStripMenuItem.Click += new System.EventHandler(this.坐标转换ToolStripMenuItem_Click);
             // 
+            // 线上预警平台ToolStripMenuItem
+            // 
+            this.线上预警平台ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.中国天气网ToolStripMenuItem,
+            this.水利部信息中心ToolStripMenuItem,
+            this.国家减灾网ToolStripMenuItem,
+            this.全国水雨信息ToolStripMenuItem});
+            this.线上预警平台ToolStripMenuItem.Name = "线上预警平台ToolStripMenuItem";
+            this.线上预警平台ToolStripMenuItem.Size = new System.Drawing.Size(98, 28);
+            this.线上预警平台ToolStripMenuItem.Text = "在线平台";
+            this.线上预警平台ToolStripMenuItem.Click += new System.EventHandler(this.线上预警平台ToolStripMenuItem_Click);
+            // 
+            // 中国天气网ToolStripMenuItem
+            // 
+            this.中国天气网ToolStripMenuItem.Name = "中国天气网ToolStripMenuItem";
+            this.中国天气网ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.中国天气网ToolStripMenuItem.Text = "中国天气网";
+            this.中国天气网ToolStripMenuItem.Click += new System.EventHandler(this.中国天气网ToolStripMenuItem_Click);
+            // 
+            // 水利部信息中心ToolStripMenuItem
+            // 
+            this.水利部信息中心ToolStripMenuItem.Name = "水利部信息中心ToolStripMenuItem";
+            this.水利部信息中心ToolStripMenuItem.Size = new System.Drawing.Size(272, 34);
+            this.水利部信息中心ToolStripMenuItem.Text = "国家水利部信息中心";
+            this.水利部信息中心ToolStripMenuItem.Click += new System.EventHandler(this.水利部信息中心ToolStripMenuItem_Click);
+            // 
+            // 国家减灾网ToolStripMenuItem
+            // 
+            this.国家减灾网ToolStripMenuItem.Name = "国家减灾网ToolStripMenuItem";
+            this.国家减灾网ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.国家减灾网ToolStripMenuItem.Text = "国家减灾网";
+            this.国家减灾网ToolStripMenuItem.Click += new System.EventHandler(this.国家减灾网ToolStripMenuItem_Click);
+            // 
+            // 全国水雨信息ToolStripMenuItem
+            // 
+            this.全国水雨信息ToolStripMenuItem.Name = "全国水雨信息ToolStripMenuItem";
+            this.全国水雨信息ToolStripMenuItem.Size = new System.Drawing.Size(272, 34);
+            this.全国水雨信息ToolStripMenuItem.Text = "全国水雨信息平台";
+            this.全国水雨信息ToolStripMenuItem.Click += new System.EventHandler(this.全国水雨信息ToolStripMenuItem_Click);
+            // 
             // Scene窗体
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1160, 752);
+            this.ClientSize = new System.Drawing.Size(1182, 808);
             this.Controls.Add(this.axTOCControl1);
             this.Controls.Add(this.axToolbarControl1);
             this.Controls.Add(this.axLicenseControl1);
@@ -195,5 +243,10 @@ namespace EngineWindowsApplication1
         private System.Windows.Forms.ToolStripMenuItem 淹没分析ToolStripMenuItem1;
         public ESRI.ArcGIS.Controls.AxSceneControl axSceneControl1;
         private System.Windows.Forms.ToolStripMenuItem 坐标转换ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 线上预警平台ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 中国天气网ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 水利部信息中心ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 国家减灾网ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 全国水雨信息ToolStripMenuItem;
     }
 }
