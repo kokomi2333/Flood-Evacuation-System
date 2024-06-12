@@ -307,6 +307,14 @@ namespace EngineWindowsApplication1
         {
 
         }
+
+        private void 空间查询ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 nextForm = new Form2();
+
+            // 显示新窗体为模态对话框
+            nextForm.ShowDialog();
+        }
     }
     }
 
