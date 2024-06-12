@@ -49,16 +49,12 @@ namespace EngineWindowsApplication1
             this.打开地图文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查询菜单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.空间查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
             this.ContextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // axTOCControl1
@@ -157,7 +153,7 @@ namespace EngineWindowsApplication1
             this.查询菜单ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1341, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1341, 30);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -169,7 +165,7 @@ namespace EngineWindowsApplication1
             this.打开栅格文件ToolStripMenuItem,
             this.打开地图文件ToolStripMenuItem});
             this.打开ToolStripMenuItem.Name = "打开ToolStripMenuItem";
-            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
             this.打开ToolStripMenuItem.Text = "文件菜单";
             // 
             // 打开cadToolStripMenuItem
@@ -205,7 +201,7 @@ namespace EngineWindowsApplication1
             this.查询菜单ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.空间查询ToolStripMenuItem});
             this.查询菜单ToolStripMenuItem.Name = "查询菜单ToolStripMenuItem";
-            this.查询菜单ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.查询菜单ToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
             this.查询菜单ToolStripMenuItem.Text = "查询菜单";
             this.查询菜单ToolStripMenuItem.Click += new System.EventHandler(this.查询菜单ToolStripMenuItem_Click);
             // 
@@ -216,32 +212,12 @@ namespace EngineWindowsApplication1
             this.空间查询ToolStripMenuItem.Text = "空间查询";
             this.空间查询ToolStripMenuItem.Click += new System.EventHandler(this.空间查询ToolStripMenuItem_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(824, 190);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(315, 332);
-            this.panel1.TabIndex = 9;
-            this.panel1.Visible = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(30, -17);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 158);
-            this.dataGridView1.TabIndex = 10;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::EngineWindowsApplication1.Properties.Resources._01b6a25baafaf7a801213dea5c9797_jpg_2o;
             this.ClientSize = new System.Drawing.Size(1341, 621);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.axMapControl1);
             this.Controls.Add(this.axToolbarControl1);
@@ -259,8 +235,6 @@ namespace EngineWindowsApplication1
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,8 +260,6 @@ namespace EngineWindowsApplication1
         private System.Windows.Forms.ToolStripMenuItem 空间查询ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 打开地图文件ToolStripMenuItem;
         public ESRI.ArcGIS.Controls.AxMapControl axMapControl1;
-        public System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
