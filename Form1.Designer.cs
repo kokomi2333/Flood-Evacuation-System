@@ -48,7 +48,6 @@ namespace EngineWindowsApplication1
             this.打开栅格文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.打开地图文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查询菜单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.空间查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
@@ -153,7 +152,7 @@ namespace EngineWindowsApplication1
             this.查询菜单ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1341, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1341, 28);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -165,7 +164,7 @@ namespace EngineWindowsApplication1
             this.打开栅格文件ToolStripMenuItem,
             this.打开地图文件ToolStripMenuItem});
             this.打开ToolStripMenuItem.Name = "打开ToolStripMenuItem";
-            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
+            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.打开ToolStripMenuItem.Text = "文件菜单";
             // 
             // 打开cadToolStripMenuItem
@@ -198,19 +197,10 @@ namespace EngineWindowsApplication1
             // 
             // 查询菜单ToolStripMenuItem
             // 
-            this.查询菜单ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.空间查询ToolStripMenuItem});
             this.查询菜单ToolStripMenuItem.Name = "查询菜单ToolStripMenuItem";
-            this.查询菜单ToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
+            this.查询菜单ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.查询菜单ToolStripMenuItem.Text = "查询菜单";
             this.查询菜单ToolStripMenuItem.Click += new System.EventHandler(this.查询菜单ToolStripMenuItem_Click);
-            // 
-            // 空间查询ToolStripMenuItem
-            // 
-            this.空间查询ToolStripMenuItem.Name = "空间查询ToolStripMenuItem";
-            this.空间查询ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.空间查询ToolStripMenuItem.Text = "空间查询";
-            this.空间查询ToolStripMenuItem.Click += new System.EventHandler(this.空间查询ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -257,7 +247,6 @@ namespace EngineWindowsApplication1
         private System.Windows.Forms.ToolStripMenuItem 打开shp文件ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 打开栅格文件ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查询菜单ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 空间查询ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 打开地图文件ToolStripMenuItem;
         public ESRI.ArcGIS.Controls.AxMapControl axMapControl1;
     }
