@@ -54,6 +54,7 @@ namespace EngineWindowsApplication1
             this.button1.TabIndex = 0;
             this.button1.Text = "确定";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -107,10 +108,14 @@ namespace EngineWindowsApplication1
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(349, 20);
             this.comboBox2.TabIndex = 7;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "DEGREE",
+            "PERCENT_RISE"});
             this.comboBox3.Location = new System.Drawing.Point(46, 187);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(349, 20);
@@ -131,6 +136,7 @@ namespace EngineWindowsApplication1
             this.axToolbarControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axToolbarControl1.OcxState")));
             this.axToolbarControl1.Size = new System.Drawing.Size(34, 28);
             this.axToolbarControl1.TabIndex = 10;
+            this.axToolbarControl1.OnMouseDown += new ESRI.ArcGIS.Controls.IToolbarControlEvents_Ax_OnMouseDownEventHandler(this.axToolbarControl1_OnMouseDown);
             // 
             // axToolbarControl2
             // 
@@ -139,6 +145,7 @@ namespace EngineWindowsApplication1
             this.axToolbarControl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axToolbarControl2.OcxState")));
             this.axToolbarControl2.Size = new System.Drawing.Size(34, 28);
             this.axToolbarControl2.TabIndex = 11;
+            this.axToolbarControl2.OnMouseDown += new ESRI.ArcGIS.Controls.IToolbarControlEvents_Ax_OnMouseDownEventHandler(this.axToolbarControl2_OnMouseDown);
             // 
             // button2
             // 
@@ -148,6 +155,7 @@ namespace EngineWindowsApplication1
             this.button2.TabIndex = 12;
             this.button2.Text = "取消";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // 坡度分析
             // 
