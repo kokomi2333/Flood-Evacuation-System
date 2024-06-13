@@ -36,7 +36,7 @@ namespace EngineWindowsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             //初始化空间查询窗体
-            Form2 pspatialQueryForm = new Form2();
+            Form3 pspatialQueryForm = new Form3(this);
             if (pspatialQueryForm.ShowDialog() == DialogResult.OK)
             {
                 this.mTool = "SpatialQuery";
