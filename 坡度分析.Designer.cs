@@ -32,16 +32,16 @@ namespace EngineWindowsApplication1
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(坡度分析));
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.axToolbarControl1 = new ESRI.ArcGIS.Controls.AxToolbarControl();
-            this.axToolbarControl2 = new ESRI.ArcGIS.Controls.AxToolbarControl();
             this.button2 = new System.Windows.Forms.Button();
+            this.axToolbarControl2 = new ESRI.ArcGIS.Controls.AxToolbarControl();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl2)).BeginInit();
             this.SuspendLayout();
@@ -64,15 +64,6 @@ namespace EngineWindowsApplication1
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 2;
             this.label1.Text = "输入栅格";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 101);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "输出栅格";
             // 
             // label3
             // 
@@ -100,15 +91,6 @@ namespace EngineWindowsApplication1
             this.comboBox1.Size = new System.Drawing.Size(349, 20);
             this.comboBox1.TabIndex = 6;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(46, 116);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(349, 20);
-            this.comboBox2.TabIndex = 7;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // comboBox3
             // 
@@ -138,15 +120,6 @@ namespace EngineWindowsApplication1
             this.axToolbarControl1.TabIndex = 10;
             this.axToolbarControl1.OnMouseDown += new ESRI.ArcGIS.Controls.IToolbarControlEvents_Ax_OnMouseDownEventHandler(this.axToolbarControl1_OnMouseDown);
             // 
-            // axToolbarControl2
-            // 
-            this.axToolbarControl2.Location = new System.Drawing.Point(419, 108);
-            this.axToolbarControl2.Name = "axToolbarControl2";
-            this.axToolbarControl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axToolbarControl2.OcxState")));
-            this.axToolbarControl2.Size = new System.Drawing.Size(34, 28);
-            this.axToolbarControl2.TabIndex = 11;
-            this.axToolbarControl2.OnMouseDown += new ESRI.ArcGIS.Controls.IToolbarControlEvents_Ax_OnMouseDownEventHandler(this.axToolbarControl2_OnMouseDown);
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(268, 320);
@@ -156,6 +129,33 @@ namespace EngineWindowsApplication1
             this.button2.Text = "取消";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // axToolbarControl2
+            // 
+            this.axToolbarControl2.Location = new System.Drawing.Point(419, 108);
+            this.axToolbarControl2.Name = "axToolbarControl2";
+            this.axToolbarControl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axToolbarControl2.OcxState")));
+            this.axToolbarControl2.Size = new System.Drawing.Size(34, 28);
+            this.axToolbarControl2.TabIndex = 11;
+            this.axToolbarControl2.OnMouseDown += new ESRI.ArcGIS.Controls.IToolbarControlEvents_Ax_OnMouseDownEventHandler(this.axToolbarControl2_OnMouseDown);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(44, 101);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "输出栅格";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(46, 116);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(349, 20);
+            this.comboBox2.TabIndex = 7;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // 坡度分析
             // 
@@ -187,15 +187,15 @@ namespace EngineWindowsApplication1
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox4;
         private ESRI.ArcGIS.Controls.AxToolbarControl axToolbarControl1;
-        private ESRI.ArcGIS.Controls.AxToolbarControl axToolbarControl2;
         private System.Windows.Forms.Button button2;
+        private ESRI.ArcGIS.Controls.AxToolbarControl axToolbarControl2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

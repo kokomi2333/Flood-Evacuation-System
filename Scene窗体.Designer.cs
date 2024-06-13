@@ -120,21 +120,21 @@ namespace EngineWindowsApplication1
             // arcScene文档ToolStripMenuItem
             // 
             this.arcScene文档ToolStripMenuItem.Name = "arcScene文档ToolStripMenuItem";
-            this.arcScene文档ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arcScene文档ToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.arcScene文档ToolStripMenuItem.Text = "ArcScene文档";
             this.arcScene文档ToolStripMenuItem.Click += new System.EventHandler(this.arcScene文档ToolStripMenuItem_Click);
             // 
             // tIN数据ToolStripMenuItem
             // 
             this.tIN数据ToolStripMenuItem.Name = "tIN数据ToolStripMenuItem";
-            this.tIN数据ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tIN数据ToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.tIN数据ToolStripMenuItem.Text = "TIN数据";
             this.tIN数据ToolStripMenuItem.Click += new System.EventHandler(this.tIN数据ToolStripMenuItem_Click);
             // 
             // DEM数据ToolStripMenuItem
             // 
             this.DEM数据ToolStripMenuItem.Name = "DEM数据ToolStripMenuItem";
-            this.DEM数据ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.DEM数据ToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.DEM数据ToolStripMenuItem.Text = "DEM数据";
             this.DEM数据ToolStripMenuItem.Click += new System.EventHandler(this.DEM数据ToolStripMenuItem_Click);
             // 

@@ -139,8 +139,9 @@ namespace EngineWindowsApplication1
             //一个栅格数据集由一个或者多个波段（RasterBand）的数据组成，一个波段就是一个数据矩阵
             IRasterBandCollection rasterBandCollection = geoDataset as IRasterBandCollection;
             //将坡度分析得到的数据存储于Workspace读取的工作目录中
-            rasterBandCollection.SaveAs("slope.tif", work as IWorkspace, "TIFF");
+            rasterBandCollection.SaveAs("outPutPath.tif", work as IWorkspace, "TIFF");
 
+            MessageBox.Show("生成tif成功，请在主窗体中加载！", "提示");
 
         }
 
@@ -149,7 +150,7 @@ namespace EngineWindowsApplication1
             sfrm.axSceneControl1.Visible = false;
             sfrm.axSceneControl1.Scene.ClearSelection();
             sfrm.axSceneControl1.Refresh();
-
+            this.Close();
         }
     }
 }
