@@ -16,6 +16,8 @@ using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.DataSourcesFile;
 using ESRI.ArcGIS.DataSourcesRaster;
 using ESRI.ArcGIS.Display;
+using ESRI.ArcGIS.Geometry;
+using System.Diagnostics;
 
 namespace EngineWindowsApplication1
 {
@@ -59,36 +61,36 @@ namespace EngineWindowsApplication1
         private void DEM数据ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ISceneGraph pSG = axSceneControl1.SceneGraph;
-                IScene pS = pSG.Scene;
-                IRasterLayer pRL = new RasterLayerClass();
-                ILayer pLayer;
+            IScene pS = pSG.Scene;
+            IRasterLayer pRL = new RasterLayerClass();
+            ILayer pLayer;
 
-                OpenFileDialog pOpenFileDialog = new OpenFileDialog();
-                pOpenFileDialog.Title = "加载DEM文档";
-                pOpenFileDialog.Filter = "DEM文档(*.*)|*.tif;*.dem;*.gdb;*.jpg|TIF文档(*.tif)|*.tif|DEM文件(*.dem)|*.dem|栅格数据集(*.gdb)|*.gdb|JPEG文件(*.jpg)|*.jpg";
+            OpenFileDialog pOpenFileDialog = new OpenFileDialog();
+            pOpenFileDialog.Title = "加载DEM文档";
+            pOpenFileDialog.Filter = "DEM文档(*.*)|*.tif;*.dem;*.gdb;*.jpg|TIF文档(*.tif)|*.tif|DEM文件(*.dem)|*.dem|栅格数据集(*.gdb)|*.gdb|JPEG文件(*.jpg)|*.jpg";
 
             if (pOpenFileDialog.ShowDialog() == DialogResult.OK)
             {
-                    string pPathName = pOpenFileDialog.FileName;
-                    string pPath = pPathName.Substring(0, pPathName.LastIndexOf('\\'));
-                    string fileName = pPathName.Substring(pPath.Length + 1, pPathName.Length - pPath.Length - 1);
+                string pPathName = pOpenFileDialog.FileName;
+                string pPath = pPathName.Substring(0, pPathName.LastIndexOf('\\'));
+                string fileName = pPathName.Substring(pPath.Length + 1, pPathName.Length - pPath.Length - 1);
 
-                    IWorkspaceFactory pwsf = new RasterWorkspaceFactoryClass();
-                    IRasterWorkspace pRasterWorkspace;
+                IWorkspaceFactory pwsf = new RasterWorkspaceFactoryClass();
+                IRasterWorkspace pRasterWorkspace;
                 if (pwsf.IsWorkspace(pPath))
                 {
-                        pRasterWorkspace = pwsf.OpenFromFile(pPath, 0) as IRasterWorkspace;
-                        IRasterDataset pRasterDataset = pRasterWorkspace.OpenRasterDataset(fileName);
-                        pRL.CreateFromDataset(pRasterDataset);
-                        pLayer = pRL as ILayer;
-                        pS.AddLayer(pLayer, true);
-                        pSG.RefreshViewers();
+                    pRasterWorkspace = pwsf.OpenFromFile(pPath, 0) as IRasterWorkspace;
+                    IRasterDataset pRasterDataset = pRasterWorkspace.OpenRasterDataset(fileName);
+                    pRL.CreateFromDataset(pRasterDataset);
+                    pLayer = pRL as ILayer;
+                    pS.AddLayer(pLayer, true);
+                    pSG.RefreshViewers();
                 }
 
                 else
                 {
-                        MessageBox.Show(pPath + "请加载有效的DEM文档！", "信息提示");
-                        return;
+                    MessageBox.Show(pPath + "请加载有效的DEM文档！", "信息提示");
+                    return;
                 }
             }
         }
@@ -97,36 +99,36 @@ namespace EngineWindowsApplication1
         {
             ISceneGraph pSceneGraph = this.axSceneControl1.SceneGraph;
             FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
-                IScene pScene = pSceneGraph.Scene;
-                ITinLayer tinLayer = new TinLayerClass();
-                FileInfo fileInfo;
-                string tinPath;
-                IWorkspaceFactory tinWorkspaceFactory = new TinWorkspaceFactoryClass();
-                ITinWorkspace tinWorkspace;
-                ITin tin;
+            IScene pScene = pSceneGraph.Scene;
+            ITinLayer tinLayer = new TinLayerClass();
+            FileInfo fileInfo;
+            string tinPath;
+            IWorkspaceFactory tinWorkspaceFactory = new TinWorkspaceFactoryClass();
+            ITinWorkspace tinWorkspace;
+            ITin tin;
 
-                if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                tinPath = folderBrowserDialog1.SelectedPath;
+                fileInfo = new FileInfo(tinPath);
+                if (tinWorkspaceFactory.IsWorkspace(fileInfo.DirectoryName))
                 {
-                    tinPath = folderBrowserDialog1.SelectedPath;
-                    fileInfo = new FileInfo(tinPath);
-                    if (tinWorkspaceFactory.IsWorkspace(fileInfo.DirectoryName))
-                    {
-                        tinWorkspace = tinWorkspaceFactory.OpenFromFile(fileInfo.DirectoryName, 0) as ITinWorkspace;
-                        //tinWorkspace.OpenTin(fileInfo.DirectoryName);
-                        tin = tinWorkspace.OpenTin(fileInfo.Name);
-                        tinLayer.Dataset = tin;
-                        tinLayer.Visible = true;
-                        tinLayer.Name = fileInfo.Name;
-                        pScene.AddLayer(tinLayer as ILayer, true);
-                        pSceneGraph.RefreshViewers();
-                    }
+                    tinWorkspace = tinWorkspaceFactory.OpenFromFile(fileInfo.DirectoryName, 0) as ITinWorkspace;
+                    //tinWorkspace.OpenTin(fileInfo.DirectoryName);
+                    tin = tinWorkspace.OpenTin(fileInfo.Name);
+                    tinLayer.Dataset = tin;
+                    tinLayer.Visible = true;
+                    tinLayer.Name = fileInfo.Name;
+                    pScene.AddLayer(tinLayer as ILayer, true);
+                    pSceneGraph.RefreshViewers();
                 }
+            }
 
-                else
-                {
-                MessageBox.Show( "请加载有效的TIN文档！", "信息提示");
+            else
+            {
+                MessageBox.Show("请加载有效的TIN文档！", "信息提示");
                 return;
-                }
+            }
 
 
         }
@@ -190,6 +192,67 @@ namespace EngineWindowsApplication1
 
             // 显示新窗体为模态对话框
             nextForm.ShowDialog();
+        }
+
+        private void 坐标转换ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IPoint TransformCoordinate(IPoint point, ISpatialReference sourceSrs, ISpatialReference targetSrs)
+            {
+                // 创建空间参考转换工厂  
+                SpatialReferenceTransformFactoryClass spatialReferenceTransformFactoryClass = new SpatialReferenceTransformFactoryClass();
+                ISpatialReferenceTransformFactory transformFactory = (ISpatialReferenceTransformFactory)spatialReferenceTransformFactoryClass;
+
+                // 尝试创建空间参考转换对象  
+                ISpatialReferenceTransform transform = transformFactory.CreateTransform(sourceSrs, targetSrs);
+
+                if (transform == null)
+                {
+                    // 转换对象创建失败，可能是因为源和目标空间参考不兼容  
+                    // 这里可以抛出异常，记录错误，或者返回null等  
+                    throw new InvalidOperationException("Unable to create spatial reference transform between the source and target spatial references.");
+                }
+
+                // 假设 point 是已经存在的 IPoint 对象  
+                if (point != null)
+                {
+                    // 使用转换对象来转换点  
+                    IPoint transformedPoint = (IPoint)transform.TransformPoint(point);
+
+                    // 返回转换后的点  
+                    return transformedPoint;
+                }
+                else
+                {
+                    // 点对象为null，抛出异常或返回null等  
+                    throw new ArgumentNullException("The point to be transformed is null.");
+                }
+                // 转换点坐标  
+                IGeometry transformedGeometry = transform.Transform2D(point as IGeometry);
+
+                // 确保转换后的对象仍然是点  
+                return transformedGeometry as IPoint;
+
+            }
+        }
+
+        private void 中国天气网ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://www.weather.com.cn/alarm/");
+        }
+
+        private void 国家水利部信息中心ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://xxzx.mwr.gov.cn/");
+        }
+
+        private void 国家减灾网ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://www.ndrcc.org.cn/");
+        }
+
+        private void 全国水雨信息平台ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://xxfb.mwr.cn/");
         }
     }
 }

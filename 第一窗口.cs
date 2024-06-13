@@ -32,5 +32,25 @@ namespace EngineWindowsApplication1
             // 显示新窗体为模态对话框
             nextForm.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form0 nextForm = new Form0();
+
+            // 显示新窗体为模态对话框
+            nextForm.ShowDialog();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
